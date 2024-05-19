@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-krn74=$o+-7sp)cw^-!-kn09c1qgo+2yqw)&2b_*0rr(6=)tq-
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+LOGIN_URL = 'login'
 
 # Application definition
 
@@ -27,8 +27,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'import_export',
     'django_extensions',
+    #apps
     'clinic',
     'users',
+    'apiapp',
+
+    'drf_yasg',
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [

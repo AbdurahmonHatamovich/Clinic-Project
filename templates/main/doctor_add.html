@@ -1,0 +1,22 @@
+{% load static %}
+<div class="card" style="width: 18rem;">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label>
+        <input id="first_name" placeholder="First Name" name="first_name" required><br>
+
+        <label for="last_name">Last Name:</label>
+        <input id="last_name" placeholder="Last Name" name="last_name" required><br>
+
+        <label for="category">Category:</label>
+        <input id="category" placeholder="Category" name="category" required><br>
+
+        <label for="image">Image:</label>
+        <input id="image" placeholder="Image" name="image" type="file" required><br>
+
+        <button type="submit" class="btn btn-secondary btn-sm">ADD</button>
+        <button type="button" class="btn btn-secondary btn-sm">
+            <a href="{% url 'home' %}" style="color: inherit; text-decoration: none;">Exit</a>
+        </button>
+    </form>
+</div>

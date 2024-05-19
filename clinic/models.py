@@ -1,11 +1,12 @@
 from django.db import models
-from django.forms import EmailField
+from .helpers import SaveMediaFiles
 
 
 class Doctor(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='media/doctors/')
+    slug = models.SlugField(verbose_name='Slug', max_length=255)
+    image = models.ImageField(upload_to=SaveMediaFiles.doctor_image_path)
     category = models.CharField(max_length=100)
 
     def full_name(self):
@@ -55,7 +56,7 @@ class Appointment(models.Model):
 
 class Contact(models.Model):
     first_name = models.CharField(max_length=100)
-    email = EmailField()
+    email = models.EmailField()
     subject = models.CharField(max_length=100)
     message = models.TextField()
 
@@ -73,7 +74,7 @@ class Comments(models.Model):
     comment = models.TextField()
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    patient_image = models.ImageField(upload_to='media/comments/')
+    patient_image = models.ImageField(upload_to=SaveMediaFiles.comments_image_path)
     profession = models.CharField(max_length=100)
 
     def full_name(self):

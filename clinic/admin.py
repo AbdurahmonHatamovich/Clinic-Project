@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import Doctor,Service,Contact,Appointment
+from .models import Doctor,Service,Contact,Appointment,Comments
 from import_export.admin import ImportExportModelAdmin
 
 @admin.register(Doctor)
 class DoctorAdmin(ImportExportModelAdmin):
     list_display = ('id', 'first_name', 'last_name', 'category')
     list_display_links = ('id', 'first_name')
-    search_fields = ('id','name')
+    search_fields = ('id','first_name')
 
 
 @admin.register(Service)
@@ -31,4 +31,11 @@ class AppointmentAdmin(ImportExportModelAdmin):
     search_fields = ('id','doctor')
     ordering=('id',)
 
+
+@admin.register(Comments)
+class CommentsAdmin(ImportExportModelAdmin):
+    list_display = ('id','first_name','last_name','profession')
+    list_display_links = ('id','first_name','last_name','profession')
+    search_fields = ('id','first_name')
+    ordering=('id',)
 

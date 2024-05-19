@@ -1,0 +1,18 @@
+{% load static %}
+
+    <div class="card" style="width: 18rem;">
+        <form method="POST">
+
+        {% csrf_token %}
+        <label for="first_name"></label>
+        <input id="first_name" placeholder="First_name" name="first_name" value="{{doctor.first_name}}"><br>
+
+        <label for="last_name"></label>
+        <input id="last_name" placeholder="Last_name" name="last_name" value="{{doctor.last_name}}"> <br>
+
+        <label for="category"></label>
+        <input id="category" placeholder="category" name="category" value="{{doctor.category}}"><br>
+
+        <button type="submit" class="btn btn-secondary btn-sm">UPDATE</button>
+        </form>
+    </div>
