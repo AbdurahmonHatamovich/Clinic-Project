@@ -20,7 +20,7 @@ schema_view = get_schema_view(
 )
 
 router = routers.DefaultRouter()
-router.register('header', DoctorDetailApiView, basename='header')
+router.register('doctor', DoctorDetailApiView, basename='doctor')
 router.register('comment', CommentsDetailApiView, basename='comment')
 router.register('contact', ContactDetailApiView, basename='contact')
 router.register('appointment', AppointmentDetailApiView, basename='appointment')

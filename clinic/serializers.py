@@ -5,13 +5,13 @@ from .models import Service,Comments,Contact,Doctor,Appointment
 class DoctorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Doctor
-        fields = ['first_name','category']
+        fields = ['id','first_name','category']
 
 
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ['name']
+        fields = ['id','name']
 
 
 class AppointmentSerializer(serializers.ModelSerializer):
@@ -19,21 +19,21 @@ class AppointmentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Appointment
-        fields = ['first_name','email','doctor']
+        fields = ['id','first_name','email','doctor']
 
 
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = ['first_name','email','subject']
+        fields = ['id','first_name','email','subject']
 
 
 
 class CommentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comments
-        fields = ['comment','first_name','profession']
+        fields = ['id','comment','first_name','profession']
 
 
 
